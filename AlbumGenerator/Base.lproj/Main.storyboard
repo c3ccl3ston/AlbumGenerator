@@ -26,11 +26,21 @@
                                     <outletCollection property="gestureRecognizers" destination="foi-V8-fTi" appends="YES" id="cj3-KV-PGP"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZn-SH-WCr">
+                                <rect key="frame" x="0.0" y="132" width="390" height="28.666666666666657"/>
+                                <accessibility key="accessibilityConfiguration" identifier="albumTitle"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JZn-SH-WCr" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="20N-Lb-3Oa"/>
                             <constraint firstItem="UYn-2I-WbB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5kV-x7-FeP"/>
+                            <constraint firstItem="JZn-SH-WCr" firstAttribute="top" secondItem="UYn-2I-WbB" secondAttribute="top" constant="-100" id="87a-a2-gjt"/>
+                            <constraint firstItem="JZn-SH-WCr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="E3o-JA-m9L"/>
                             <constraint firstItem="UYn-2I-WbB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="f86-Ke-U8q"/>
                             <constraint firstItem="UYn-2I-WbB" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="width" id="fCA-GT-TIa"/>
                             <constraint firstItem="UYn-2I-WbB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="sz6-VS-h8m"/>
@@ -38,6 +48,7 @@
                     </view>
                     <connections>
                         <outlet property="albumImage" destination="UYn-2I-WbB" id="QTS-1O-iIw"/>
+                        <outlet property="albumTitle" destination="JZn-SH-WCr" id="6Go-uq-12Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

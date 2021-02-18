@@ -11,6 +11,10 @@ class AlbumGeneratorUITests: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launchArguments = ["uiTestMode"]
+        app.launch()
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
@@ -23,15 +27,9 @@ class AlbumGeneratorUITests: XCTestCase {
     }
     
     func testLoadImage() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
         let albumimageImage = XCUIApplication().images["albumImage"]
-        sleep(5)
         let screenshotBefore = albumimageImage.screenshot()
         albumimageImage.tap()
-        sleep(5)
         let screenshotAfter = albumimageImage.screenshot()
         XCTAssertNotEqual(screenshotBefore.pngRepresentation, screenshotAfter.pngRepresentation)
     }

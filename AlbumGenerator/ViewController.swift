@@ -10,10 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var albumImage: UIImageView!
+    @IBOutlet weak var albumTitle: UILabel!
     
     @IBAction func albumTapped(_ sender: Any) {
         loadAlbumImage()
     }
+    
+    var testImageNumber:UInt = 1;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,12 @@ class ViewController: UIViewController {
     }
     
     func loadAlbumImage() {
+        if UIApplication.isRunningTest {
+            albumImage.image = UIImage(named: "testingImage\(testImageNumber)")
+            testImageNumber = (testImageNumber % 2) + 1
+            return
+        }
+        
         let imageUrlString = "https://picsum.photos/500/"
         guard let imageUrl:URL = URL(string: imageUrlString) else {
             return
